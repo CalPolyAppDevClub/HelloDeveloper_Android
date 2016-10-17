@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         EditText nameField = (EditText)findViewById(R.id.editText);
         String message = nameField.getText().toString();
 
-        https://surveys.apple.com/f/206505/55f2
-
         Toast.makeText(this, "Hello, " + message + "!", Toast.LENGTH_SHORT).show();
     }
 }
