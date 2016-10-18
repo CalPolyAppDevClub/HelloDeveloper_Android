@@ -37,16 +37,16 @@ Here we will find all files relevant to Gradle. Gradle is Android's build tool o
 if you don't know what a build tool is - We won't be touching gradle files for this project.
 
 ###`app/manifests`
-Here you will find 'AndroidManifest.xml'. This file tells the operating system the details about your app.
+Here you will find `AndroidManifest.xml`. This file tells the operating system the details about your app.
 Some examples include any required permissions, your app's name, and the icon to use.
 
 ###`app/java`
 Here is where you will write your app's logic.
-You will find three directories that roughly fit the path of 'com.example.com.myapplication'.
-Two of them will be labeled 'androidTest' and 'test' in parenthesis. The main folder without tags is
+You will find three directories that roughly fit the path of `com.example.com.myapplication`.
+Two of them will be labeled `androidTest` and `test` in parenthesis. The main folder without tags is
 where we will be writing our code. The other two folders are for writing test scripts to make sure our
 code is well built. In test, we want to write test cases for all things that do not require us to use
-any Android classes. 'androidTest', in contrast, is for test cases that require Android classes. The
+any Android classes. `androidTest`, in contrast, is for test cases that require Android classes. The
 reasoning for this seperation is because any tests involving Android classes will require you to load
 an android emulator. This results in *much* long testing times. The seperation allows us to run our
 non-android tests without the delay of an emulator.
@@ -54,7 +54,7 @@ non-android tests without the delay of an emulator.
 ###`app/res`
 Here is where all the content (resources) of our app lives.
 There are various directories here that are used for resources such text, images, audio, and coloring
-for your app's theme is specified. The one you will use most frequently is 'res/values/strings.xml'.
+for your app's theme is specified. The one you will use most frequently is `res/values/strings.xml`.
 This file holds all static text that appears in your app. Having all of our text in one file allows us 
 to easily translate our app. The operating system will load the correct set of strings based on the 
 system language. Its this type of structure that allows android apps to be very device-flexible.
@@ -68,18 +68,18 @@ On the right, Android Studio renders outlines of what components you have placed
 This left-hand-side can be very useful. Minimalist styling trends can make it difficult to distinguish where
 one UI element begins and another ends. 
 
-Left of these renderings, you'l find a panel labeled 'Palette'. In here, you can drag UI elements over
+Left of these renderings, you'l find a panel labeled `Palette`. In here, you can drag UI elements over
 onto the rendering and place them as you see fit. Go ahead and drag an EditText object onto the rendering.
 Note: It is important that you grab an *EditText* and not a TextView. EditText objects allow you
 to input text while TextViews simply display some text. *If you choose the wrong object, your app
-will not work*. Click on the EditText object and on the left you will see a 'Properties' panel.
+will not work*. Click on the EditText object and on the left you will see a `Properties` panel.
 
-Go ahead and change the 'hint' field to say "Please enter your name". Now, remove whatever value is in
-the 'text' field. A hint is that grayed-out text you see in a form that lets you know what a field is
+Go ahead and change the `hint` field to say "Please enter your name". Now, remove whatever value is in
+the `text` field. A hint is that grayed-out text you see in a form that lets you know what a field is
 expecting.
 
-Second, drag a button onto the screen. Click on the button in the rendering. In the 'Properties' panel,
-go down to 'onClick' and type 'greet'. We have now specified what function will be called
+Second, drag a button onto the screen. Click on the button in the rendering. In the `Properties` panel,
+go down to `onClick` and type `greet`. We have now specified what function will be called
 when the button is pressed.
 
 Okay, now we're done laying out our UI. Easy, right? Now lets move on to adding some functionality
@@ -91,19 +91,19 @@ Go ahead and create a new public method
 that takes in a View as its only parameter. We will call this method from the front end to greet our
 new android developer. 
 
-Your method should take the signature: 'public void greet(View vew)'. This is because this is what
-we specified in the button's 'onClick' field. Now we move on to writing the inside of this function.
+Your method should take the signature: `public void greet(View vew)`. This is because this is what
+we specified in the button's `onClick` field. Now we move on to writing the inside of this function.
 
 Inside, we will ask for the EditText object on the front end
 that the user will put their name into. This is done with the following line: 
-'EditText nameField = (EditText) findViewById(R.id.editText);'. Now, from this object we will
+`EditText nameField = (EditText) findViewById(R.id.editText);`. Now, from this object we will
 grab the text that it is holding. On a new line, we type:
-'String message = nameField.getText().toString();' 
+`String message = nameField.getText().toString();` 
 
 Lastly, we will display this text to the user.
 We will do this using a toast. A toast is a little notification that you can display to user. If you
 have used android before, you've probably seen this type of notification at least once. go ahead and type:
-'Toast.makeText(this, "Hello, " + message + "!", Toast.LENGTH_SHORT).show();'
+`Toast.makeText(this, "Hello, " + message + "!", Toast.LENGTH_SHORT).show();`
 
 In this method, we pass in some context for the app (whose calling Toast.makeText), the message we want to display,
 and the duration for which this message will be shown.
